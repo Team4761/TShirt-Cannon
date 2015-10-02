@@ -1,4 +1,7 @@
-package org.usfirst.frc.team4761.robot;
+package org.robockets.robot;
+
+import edu.wpi.first.wpilibj.Solenoid;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -6,4 +9,7 @@ package org.usfirst.frc.team4761.robot;
  * floating around.
  */
 public class RobotMap {
+	
+	public RobotMap() {
+	}
 }
