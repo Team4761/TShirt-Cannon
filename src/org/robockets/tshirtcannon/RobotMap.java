@@ -1,4 +1,4 @@
-package org.robockets.robot;
+package org.robockets.tshirtcannon;
 
 import edu.wpi.first.wpilibj.Solenoid;
 

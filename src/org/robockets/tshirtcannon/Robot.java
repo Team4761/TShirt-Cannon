@@ -1,5 +1,5 @@
 
-package org.robockets.robot;
+package org.robockets.tshirtcannon;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
