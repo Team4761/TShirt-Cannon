@@ -1,5 +1,7 @@
 package org.robockets.tshirtcannon;
 
+import edu.wpi.first.wpilibj.Solenoid;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -9,7 +11,10 @@ package org.robockets.tshirtcannon;
 public class RobotMap {
 	
 	public RobotMap() {
+		Solenoid fire = new Solenoid(1); // Assumes channel for firing solenoid is 1.
 	}
 	
 	public static final Cannon cannonSubsystem = new Cannon();
+	
+	public static Solenoid fire;
 }

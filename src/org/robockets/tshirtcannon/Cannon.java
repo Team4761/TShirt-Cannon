@@ -2,17 +2,26 @@ package org.robockets.tshirtcannon;
 
 import org.robockets.tshirtcannon.cannons.FireCannon;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * The thing on the top that shoots T-Shirts.
  */
 public class Cannon extends Subsystem {
+	
+	private Solenoid fire = RobotMap.fire; // Firing solenoid.
+	
     public void initDefaultCommand() {
     	setDefaultCommand(new FireCannon());
     }
-    public void fire() {
-    	//TODO: Fire the cannon
+    
+    /**
+     * Open or close the fire solenoid to fire air.
+     * @param output Output of solenoid, open is true, closed is false.
+     */
+    public void setValve(boolean output) {
+    	fire.set(output); // Opens solenoid.
     }
     
     /**
