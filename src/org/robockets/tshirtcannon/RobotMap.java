@@ -10,4 +10,6 @@ public class RobotMap {
 	
 	public RobotMap() {
 	}
+	
+	public static final Cannon cannonSubsystem = new Cannon();
 }
