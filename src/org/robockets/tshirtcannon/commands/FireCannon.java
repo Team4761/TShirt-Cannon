@@ -1,4 +1,4 @@
-package org.robockets.tshirtcannon.cannons;
+package org.robockets.tshirtcannon.commands;
 
 import org.robockets.tshirtcannon.RobotMap;
 
