@@ -1,5 +1,7 @@
 package org.robockets.tshirtcannon;
 
+import edu.wpi.first.wpilibj.VictorSP;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -12,4 +14,6 @@ public class RobotMap {
 	}
 	
 	public static final Cannon cannonSubsystem = new Cannon();
+	private static final int cannonXAxisMotorControllerPort = 0;
+	public static final VictorSP cannonXAxisMotorController = new VictorSP(cannonXAxisMotorControllerPort);
 }
