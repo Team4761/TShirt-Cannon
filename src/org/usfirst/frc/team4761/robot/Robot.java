@@ -2,9 +2,12 @@
 package org.usfirst.frc.team4761.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.robockets.tshirtcannon.subsystems.Drivetrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -15,6 +18,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
+	public static Drivetrain drivetrain = new Drivetrain();
+	
 	public static OI oi;
 
     Command autonomousCommand;
@@ -25,6 +30,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+
     }
 	
 	public void disabledPeriodic() {
