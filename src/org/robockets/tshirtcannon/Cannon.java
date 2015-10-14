@@ -1,6 +1,6 @@
 package org.robockets.tshirtcannon;
 
-import org.robockets.tshirtcannon.cannons.FireCannon;
+import org.robockets.tshirtcannon.commands.FireCannon;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
