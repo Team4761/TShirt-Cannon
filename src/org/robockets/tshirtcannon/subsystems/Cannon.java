@@ -1,4 +1,4 @@
-package org.robockets.tshirtcannon;
+package org.robockets.tshirtcannon.subsystems;
 
 import org.robockets.tshirtcannon.commands.FireCannon;
 
