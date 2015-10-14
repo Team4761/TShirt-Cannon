@@ -17,34 +17,33 @@ public class Cannon extends Subsystem {
     
     /**
      * Rotate the base of the cannon.
-     * @param dir Direction to rotate in. Must be 'l' (left) or 'r' (right)
+     * @param dir Direction to rotate in. Must be left or right.
      */
-    public void rotateBase(char dir) {
-    	if(dir == 'l') {
+    public void rotateBase(XAxisRelativeDirection dir) {
+    	if(dir == XAxisRelativeDirection.LEFT) {
     		//TODO: spin left
     	}
-    	else if(dir == 'r') {
+    	else if(dir == XAxisRelativeDirection.RIGHT) {
     		//TODO: spin right
     	}
     	else {
-    		throw new IllegalArgumentException("Direction is not left ('l') or right ('r')!");
+    		throw new IllegalArgumentException("Direction is not left or right");
     	}
     }
     
     /**
      * Adjust the angle of the cannon.
-     * @param degrees Degrees to adjust the cannon
-     * @param dir Direction to move the cannon. Must be 'u' (up) or 'd' (down)
+     * @param dir Direction to move the cannon. Must be up or down.
      */
-    public void adjustAngle(int degrees, char dir) {
-    	if(dir == 'u') {
+    public void adjustAngle(ZAxisRelativeDirection dir) {
+    	if(dir == ZAxisRelativeDirection.UP) {
     		//TODO: move cannon up
     	}
-    	else if(dir == 'd') {
+    	else if(dir == ZAxisRelativeDirection.DOWN) {
     		//TODO: move cannon down
     	}
     	else {
-    		throw new IllegalArgumentException("Direction is not up ('u') or down ('d')!");
+    		throw new IllegalArgumentException("Direction is not up or down!");
     	}
     }
 }
