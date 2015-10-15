@@ -1,5 +1,6 @@
 package org.robockets.tshirtcannon.subsystems;
 
+import org.robockets.tshirtcannon.RobotMap;
 import org.robockets.tshirtcannon.XAxisRelativeDirection;
 import org.robockets.tshirtcannon.ZAxisRelativeDirection;
 import org.robockets.tshirtcannon.commands.FireCannon;
