@@ -4,15 +4,33 @@ import org.robockets.tshirtcannon.RobotMap;
 import org.robockets.tshirtcannon.XAxisRelativeDirection;
 import org.robockets.tshirtcannon.ZAxisRelativeDirection;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The thing on the top that shoots T-Shirts.
  */
-public class Cannon extends Subsystem {
+public class Cannon extends PIDSubsystem {
 	
 	private Solenoid fire = RobotMap.fire; // Firing solenoid.
+	private SpeedController spinMotor = RobotMap.spinMotor;
+	
+	private Encoder spinEncoder = RobotMap.spinEncoder;
+	private DigitalInput spinMagnet = RobotMap.spinMagnet;
+	
+	public float distance; // Must initialize.
+	public int numberBarrels = 7;
+	
+	public Cannon(){
+		super("Cannon", 1.0, 0, 0);
+		setAbsoluteTolerance(0.2);
+		getPIDController().setContinuous(false);
+		LiveWindow.addActuator("Cannon", "Cannon PIDSubsystem", getPIDController());
+	}
 	
     public void initDefaultCommand() {
     	setDefaultCommand(new FireCannon());
@@ -57,5 +75,24 @@ public class Cannon extends Subsystem {
     		throw new IllegalArgumentException("Direction is not up or down!");
     	}
     }
+
+	@Override
+	protected double returnPIDInput() {
+		return spinEncoder.getDistance();
+	}
+
+	@Override
+	protected void usePIDOutput(double output) {
+		spinMotor.pidWrite(output);
+	}
+	
+	/**
+	 * Receive status on alignment of first barrel.
+	 * @return	True if the DigitalInput is activated, meaning the barrel is matched correctly to the valve.
+	 */
+	public boolean getAligned() {
+		return spinMagnet.get();
+	}
+	
 }
 
