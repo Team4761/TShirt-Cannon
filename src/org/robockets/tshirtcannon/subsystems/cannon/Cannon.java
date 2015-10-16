@@ -1,9 +1,8 @@
-package org.robockets.tshirtcannon.subsystems;
+package org.robockets.tshirtcannon.subsystems.cannon;
 
 import org.robockets.tshirtcannon.RobotMap;
 import org.robockets.tshirtcannon.XAxisRelativeDirection;
 import org.robockets.tshirtcannon.ZAxisRelativeDirection;
-import org.robockets.tshirtcannon.commands.FireCannon;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
