@@ -1,5 +1,8 @@
 package org.robockets.tshirtcannon;
 
+import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.I2C.Port;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -7,7 +10,10 @@ package org.robockets.tshirtcannon;
  * floating around.
  */
 public class RobotMap {
+	public static I2C arduino = new I2C(Port.kOnboard, 1 );
+
 	
 	public RobotMap() {
+		
 	}
 }
