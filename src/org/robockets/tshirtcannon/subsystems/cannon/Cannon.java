@@ -33,7 +33,6 @@ public class Cannon extends PIDSubsystem {
 	}
 	
     public void initDefaultCommand() {
-    	setDefaultCommand(new FireCannon());
     }
     
     /**
