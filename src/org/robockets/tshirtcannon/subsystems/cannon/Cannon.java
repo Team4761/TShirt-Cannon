@@ -23,7 +23,9 @@ public class Cannon extends PIDSubsystem {
 	private DigitalInput spinMagnet = RobotMap.spinMagnet;
 	
 	public float distance; // Must initialize.
-	public int numberBarrels = 7;
+	private int numberOfBarrels = RobotMap.numberOfBarrels;
+	
+	public boolean PID = false; // Set true when PID is in use, otherwise if you fire, align it first.
 	
 	public Cannon(){
 		super("Cannon", 1.0, 0, 0);
@@ -85,6 +87,10 @@ public class Cannon extends PIDSubsystem {
 		spinMotor.pidWrite(output);
 	}
 	
+	public void spinGatlin(double speed) {
+		spinMotor.set(speed);
+	};
+	
 	/**
 	 * Receive status on alignment of first barrel.
 	 * @return	True if the DigitalInput is activated, meaning the barrel is matched correctly to the valve.
@@ -93,5 +99,10 @@ public class Cannon extends PIDSubsystem {
 		return spinMagnet.get();
 	}
 	
+	public void resetPID() {
+		spinEncoder.reset();
+		setSetpoint(0);
+		PID = true;
+	}
 }
 

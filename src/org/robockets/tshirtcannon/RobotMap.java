@@ -18,12 +18,14 @@ public class RobotMap {
 	
 	public RobotMap() {
 		fire = new Solenoid(1); // Assumes channel for firing solenoid is 1.
+		numberOfBarrels = 7;
 		spinMotor = new VictorSP(1); // Assume port 1 for spin.
 		spinEncoder = new Encoder(0, 1); // Assume digital ports of 0 and 1 for encoder.
 		spinEncoder.setDistancePerPulse(360/3000); // Assume 3000 resolution.
 	}
 	
 	public static final Cannon cannonSubsystem = new Cannon();
+	public static int numberOfBarrels;
 	public static Solenoid fire;
 	public static SpeedController spinMotor;
 	public static Encoder spinEncoder;
