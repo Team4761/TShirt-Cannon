@@ -1,5 +1,7 @@
 package org.robockets.tshirtcannon;
 
+import edu.wpi.first.wpilibj.CounterBase;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.VictorSP;
 import org.robockets.tshirtcannon.subsystems.Cannon;
 
@@ -17,4 +19,5 @@ public class RobotMap {
 	public static final Cannon cannonSubsystem = new Cannon();
 	private static final int cannonXAxisMotorControllerPort = 0;
 	public static final VictorSP cannonXAxisMotorController = new VictorSP(cannonXAxisMotorControllerPort);
+	public static final Encoder cannonZAxisEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 }
