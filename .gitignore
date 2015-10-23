@@ -73,7 +73,7 @@ gradlew.bat
 release/
 gradle/
 build/
-metadata/
+.metadata/
 .gradle/
 src/resources
 src/groovy
