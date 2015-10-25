@@ -87,7 +87,7 @@ public class Cannon extends PIDSubsystem {
 		spinMotor.pidWrite(output);
 	}
 	
-	public void spinGatlin(double speed) {
+	public void spinGatling(double speed) {
 		spinMotor.set(speed);
 	};
 	

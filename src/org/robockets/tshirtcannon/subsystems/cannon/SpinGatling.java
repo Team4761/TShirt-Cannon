@@ -3,42 +3,42 @@ package org.robockets.tshirtcannon.subsystems.cannon;
 import org.robockets.tshirtcannon.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
  */
-public class AlignGatlin extends Command {
+public class SpinGatling extends Command {
 
 	Cannon cannon = RobotMap.cannonSubsystem;
+	float distance;
 	
-    public AlignGatlin() {
+    public SpinGatling(int barrel) {
     	requires(cannon);
     }
 
+    public SpinGatling(double dis) {
+    	requires(cannon);
+    }
+    
     // Called just before this Command runs the first time
     protected void initialize() {
-    	cannon.PID = false;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	cannon.spinGatlin(0.5);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return cannon.getAligned();
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	RobotMap.cannonSubsystem.spinGatlin(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	RobotMap.cannonSubsystem.spinGatlin(0);
     }
 }
