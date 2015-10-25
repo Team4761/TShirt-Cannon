@@ -23,7 +23,6 @@ public class Cannon extends PIDSubsystem {
 	private DigitalInput spinMagnet = RobotMap.spinMagnet;
 	
 	public float distance; // Must initialize.
-	private int numberOfBarrels = RobotMap.numberOfBarrels;
 	
 	public boolean PID = false; // Set true when PID is in use, otherwise if you fire, align it first.
 	
@@ -84,7 +83,8 @@ public class Cannon extends PIDSubsystem {
 
 	@Override
 	protected void usePIDOutput(double output) {
-		spinMotor.pidWrite(output);
+    	if(!PID)
+    	spinMotor.pidWrite(output);
 	}
 	
 	public void spinGatling(double speed) {
