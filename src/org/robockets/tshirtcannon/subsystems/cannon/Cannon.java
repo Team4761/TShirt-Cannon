@@ -24,6 +24,9 @@ public class Cannon extends PIDSubsystem {
 	
 	public float distance; // Must initialize.
 	
+	/**
+	 * A switch for using PID to do encoder-based spin for the gatling part of the Cannon.
+	 */
 	public boolean PID = false; // Set true when PID is in use, otherwise if you fire, align it first.
 	
 	public Cannon(){
@@ -87,6 +90,10 @@ public class Cannon extends PIDSubsystem {
     	spinMotor.pidWrite(output);
 	}
 	
+	/**
+	 * Spin the Gatling part of cannon by a set speed.
+	 * @param speed The speed to spin the gatling gun portion of the cannon by.
+	 */
 	public void spinGatling(double speed) {
 		spinMotor.set(speed);
 	};
@@ -99,6 +106,9 @@ public class Cannon extends PIDSubsystem {
 		return spinMagnet.get();
 	}
 	
+	/**
+	 * Enable and reset the PID so that distance is 0.
+	 */
 	public void resetPID() {
 		spinEncoder.reset();
 		setSetpoint(0);
