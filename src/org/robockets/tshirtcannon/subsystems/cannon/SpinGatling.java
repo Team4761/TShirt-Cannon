@@ -5,21 +5,31 @@ import org.robockets.tshirtcannon.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * Spin the gatling gun.
  */
 public class SpinGatling extends Command {
 
 	Cannon cannon = RobotMap.cannonSubsystem;
 	float distance;
 	
-    public SpinGatling(int barrel) {
+	/**
+	 * Returns a SpinGatling command that spins by the specified amount of barrels.
+	 * @param barrel The number of barrels to spin by, this can be negative.
+	 */
+	
+    public SpinGatling(int barrels) {
     	requires(cannon);
-    	distance = barrel;
+    	distance = barrels;
     }
 
-    public SpinGatling(float dis) {
+    /**
+     * Returns a SpinGatling command that spins by the specified distance.
+     * @param distanceToSpin The distance to spin the barrel by, this can be negative.
+     */
+    
+    public SpinGatling(float distanceToSpin) {
     	requires(cannon);
-    	distance = dis;
+    	distance = distanceToSpin;
     }
     
     // Called just before this Command runs the first time
