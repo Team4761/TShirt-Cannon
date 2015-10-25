@@ -3,7 +3,7 @@ package org.robockets.tshirtcannon.subsystems.cannon;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- *
+ * Fire one tshirt.
  */
 public class FireCannon extends CommandGroup {
     
