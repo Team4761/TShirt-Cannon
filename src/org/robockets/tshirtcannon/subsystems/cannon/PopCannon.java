@@ -17,7 +17,7 @@ public class PopCannon extends Command {
         requires(cannon);
         timeout = time;
     }
-
+    
     // Called just before this Command runs the first time
     protected void initialize() {
     	if(!cannon.PID) end(); // If it's unaligned, I will not pop!

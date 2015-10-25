@@ -14,23 +14,27 @@ public class SpinGatling extends Command {
 	
     public SpinGatling(int barrel) {
     	requires(cannon);
+    	distance = barrel;
     }
 
-    public SpinGatling(double dis) {
+    public SpinGatling(float dis) {
     	requires(cannon);
+    	distance = dis;
     }
     
     // Called just before this Command runs the first time
     protected void initialize() {
+    	if(!cannon.PID) end(); // If it's unaligned, I will not turn to next barrel!
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	cannon.setSetpointRelative(distance); 
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return cannon.onTarget();
     }
 
     // Called once after isFinished returns true
