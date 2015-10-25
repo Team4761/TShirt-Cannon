@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * Open and close the valves in quick succession in order to fire a tshirt.
  */
 public class PopCannon extends Command {
 
