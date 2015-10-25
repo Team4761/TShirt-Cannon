@@ -21,7 +21,7 @@ public class RobotMap {
 		numberOfBarrels = 7;
 		spinMotor = new VictorSP(1); // Assume port 1 for spin.
 		spinEncoder = new Encoder(0, 1); // Assume digital ports of 0 and 1 for encoder.
-		spinEncoder.setDistancePerPulse(360/3000); // Assume 3000 resolution.
+		spinEncoder.setDistancePerPulse(numberOfBarrels/3000); // Assume 3000 resolution. Distance is measured in barrels.
 	}
 	
 	public static final Cannon cannonSubsystem = new Cannon();
