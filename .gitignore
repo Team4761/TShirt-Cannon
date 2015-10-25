@@ -1,5 +1,7 @@
-#Windows
+#Misc.
+*.swp
 
+#Windows
 .metadata/
 
 #Binaries
