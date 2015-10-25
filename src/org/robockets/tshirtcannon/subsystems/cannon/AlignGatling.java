@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * A command used to calibrate the PID so that it begins exactly on the first barrel.
  */
 public class AlignGatling extends Command {
 
