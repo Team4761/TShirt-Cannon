@@ -1,4 +1,4 @@
-package org.robockets.tshirtcannon.subsystems;
+package org.robockets.tshirtcannon.subsystems.cannon;
 
 import org.robockets.tshirtcannon.RobotMap;
 import org.robockets.tshirtcannon.commands.FireCannon;
@@ -35,13 +35,27 @@ public class Cannon extends Subsystem {
     		throw new IllegalArgumentException("Direction is not left or right");
     	}
     }
-    
+
+    final static double adjustSpeed = 0.5; //TODO: update when hardware exists IRL
+    final static int maxUpDownDistance = 100; // TODO: Update when hardware exists IRL
     /**
      * Adjust the angle of the cannon.
      * @param dir Direction to move the cannon. Must be up or down.
      */
-    public void adjustAngle(ZAxisRelativeDirection dir) {
-		org.robockets.tshirtcannon.Cannon.adjustAngle(dir); // ¯\_(ツ)_/¯
+    public static void adjustAngle(ZAxisRelativeDirection dir) {
+        if(dir == ZAxisRelativeDirection.UP) {
+            if (RobotMap.cannonZAxisEncoder.get() <= maxUpDownDistance) {
+                RobotMap.cannonXAxisMotorController.set(adjustSpeed);
+            }
+        }
+        else if(dir == ZAxisRelativeDirection.DOWN) {
+            if (RobotMap.cannonZAxisEncoder.get() <= -maxUpDownDistance) {
+                RobotMap.cannonXAxisMotorController.set(adjustSpeed);
+            }
+        }
+        else {
+            throw new IllegalArgumentException("Direction is not up or down (null maybe?)");
+        }
     }
 }
 

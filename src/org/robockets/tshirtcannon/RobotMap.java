@@ -1,9 +1,8 @@
 package org.robockets.tshirtcannon;
 
-import edu.wpi.first.wpilibj.CounterBase;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.VictorSP;
-import org.robockets.tshirtcannon.subsystems.Cannon;
+import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
