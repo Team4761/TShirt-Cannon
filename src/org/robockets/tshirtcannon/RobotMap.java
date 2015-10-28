@@ -1,11 +1,8 @@
 package org.robockets.tshirtcannon;
 
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.*;
 
+import org.robockets.tshirtcannon.sensors.SafetySensor;
 import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
 /**
@@ -33,4 +30,6 @@ public class RobotMap {
 	public static SpeedController spinMotor;
 	public static Encoder spinEncoder;
 	public static DigitalInput spinMagnet;
+	public static final int safetySensorPort = -1; //TODO: update when hardware exists IRL
+	public static final SafetySensor safetySensor = new SafetySensor(new AnalogInput(safetySensorPort));
 }
