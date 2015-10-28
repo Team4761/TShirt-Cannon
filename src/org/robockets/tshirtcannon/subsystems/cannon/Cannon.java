@@ -1,7 +1,6 @@
 package org.robockets.tshirtcannon.subsystems.cannon;
 
 import org.robockets.tshirtcannon.RobotMap;
-import org.robockets.tshirtcannon.commands.FireCannon;
 import org.robockets.tshirtcannon.XAxisRelativeDirection; // ¯\_(ツ)_/¯
 import org.robockets.tshirtcannon.ZAxisRelativeDirection; // ¯\_(ツ)_/¯
 import edu.wpi.first.wpilibj.command.Subsystem;
