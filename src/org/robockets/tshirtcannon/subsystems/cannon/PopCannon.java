@@ -20,7 +20,7 @@ public class PopCannon extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	if(!cannon.PID) end(); // If it's unaligned, I will not pop!
-        if(RobotMap.safetySensor.getDistance() < 200) end(); //Something within 2 meters, I will not pop!
+        if(RobotMap.safetySensor.getDistance() < 200 && RobotMap.safetyEnabled == true) end(); //Something within 2 meters, I will not pop!
     	setTimeout(timeout);
     }
 

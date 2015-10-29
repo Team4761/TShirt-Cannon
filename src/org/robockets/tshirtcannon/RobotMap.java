@@ -35,6 +35,7 @@ public class RobotMap {
 	public static SpeedController spinMotor;
 	public static Encoder spinEncoder;
 	public static DigitalInput spinMagnet;
+	public static final boolean safetyEnabled = true;
 	public static final int safetySensorPort = -1; //TODO: update when hardware exists IRL
 	public static final SafetySensor safetySensor = new SafetySensor(new AnalogInput(safetySensorPort));
 }
