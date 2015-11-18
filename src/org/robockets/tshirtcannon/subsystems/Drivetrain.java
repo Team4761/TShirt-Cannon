@@ -15,10 +15,7 @@ public class Drivetrain extends Subsystem {
 	
 		public static final RobotDrive drivetrain = new RobotDrive(1,2,3,4);
     
-    	Victor frontLeftMotor = new Victor(RobotMap.frontLeftMotor);
-    	Victor backLeftMotor = new Victor(RobotMap.backLeftMotor);
-    	Victor frontRightMotor = new Victor(RobotMap.frontRightMotor);
-    	Victor backRightMotor = new Victor(RobotMap.backRightMotor);
+
     	
 
     public void initDefaultCommand() {
@@ -33,6 +30,8 @@ public class Drivetrain extends Subsystem {
     
     public void stop(){
     	drivetrain.drive(0,0);
+    	
     }
+    
 }
 

@@ -2,14 +2,13 @@
 package org.robockets.tshirtcannon;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.robockets.tshirtcannon.commands.ExampleCommand;
+import org.robockets.tshirtcannon.commands.drive;
 import org.robockets.tshirtcannon.subsystems.Drivetrain;
-import org.robockets.tshirtcannon.subsystems.ExampleSubsystem;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,9 +19,9 @@ import org.robockets.tshirtcannon.subsystems.ExampleSubsystem;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	
 	public static Drivetrain drivetrain = new Drivetrain();
+	public static drive driveObj = new drive();
 	
 	public static OI oi;
 
@@ -59,6 +58,7 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        driveObj.start();
     }
 
     /**

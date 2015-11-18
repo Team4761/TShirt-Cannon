@@ -20,6 +20,7 @@ public class drive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	System.out.println("drive.execute");
     	Robot.drivetrain.takeJoystickInputs(Robot.oi.leftStick, Robot.oi.rightStick);
     }
 

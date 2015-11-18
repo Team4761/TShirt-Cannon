@@ -67,13 +67,8 @@ run/
 ehthumbs.db
 Thumbs.db
 
-gradlew
-gradlew.bat
-*.gradle
 release/
-gradle/
 build/
 .metadata/
-.gradle/
 src/resources
 src/groovy
