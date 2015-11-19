@@ -1,4 +1,4 @@
-package org.usfirst.frc.team4761.robot;
+package org.robockets.tshirtcannon
 
 public class RobotMap {
     // For example to map the left and right motors, you could define the
@@ -15,5 +15,4 @@ public class RobotMap {
 	public static int backLeftMotor = 2;
 	public static int frontRightMotor = 3;
 	public static int backRightMotor = 4;
->>>>>>> 9689d1f... Add drive train subsystem, commands, and OI code.:src/org/robockets/tshirtcannon/RobotMap.java
 }
