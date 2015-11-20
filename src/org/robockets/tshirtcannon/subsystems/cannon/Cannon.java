@@ -24,13 +24,16 @@ public class Cannon extends PIDSubsystem {
 	
 	public float distance; // Must initialize.
 	
+    final static double ADJUST_SPEED = 0.5; //TODO: update when hardware exists IRL
+    final static int MAX_UP_DOWN_DISTANCE = 100; // TODO: Update when hardware exists IRL
+	
 	/**
 	 * A switch for using PID to do encoder-based spin for the gatling part of the Cannon.
 	 */
 	public boolean PID = false; // Set true when PID is in use, otherwise if you fire, align it first.
 	
 	public Cannon(){
-		super("Cannon", 1.0, 0, 0);
+		super("Cannon", 0.1, 0, 0);
 		setAbsoluteTolerance(0.2);
 		getPIDController().setContinuous(false);
 		LiveWindow.addActuator("Cannon", "Cannon PIDSubsystem", getPIDController());
@@ -54,36 +57,29 @@ public class Cannon extends PIDSubsystem {
      */
 	@Deprecated
     public void rotateBase(XAxisRelativeDirection dir) {
-    	if(dir == XAxisRelativeDirection.LEFT) {
+    	if (dir == XAxisRelativeDirection.LEFT) {
     		//TODO: spin left
-    	}
-    	else if(dir == XAxisRelativeDirection.RIGHT) {
+    	} else if(dir == XAxisRelativeDirection.RIGHT) {
     		//TODO: spin right
-    	}
-    	else {
+    	} else {
     		throw new IllegalArgumentException("Direction is not left or right");
     	}
     }
-
-    final static double adjustSpeed = 0.5; //TODO: update when hardware exists IRL
-    final static int maxUpDownDistance = 100; // TODO: Update when hardware exists IRL
     
     /**
      * Adjust the angle of the cannon.
      * @param dir Direction to move the cannon. Must be up or down.
      */
     public static void adjustAngle(ZAxisRelativeDirection dir) {
-        if(dir == ZAxisRelativeDirection.UP) {
-            if (RobotMap.cannonZAxisEncoder.get() <= maxUpDownDistance) {
-                RobotMap.cannonXAxisMotorController.set(adjustSpeed);
+        if (dir == ZAxisRelativeDirection.UP) {
+            if (RobotMap.cannonZAxisEncoder.get() <= MAX_UP_DOWN_DISTANCE) {
+                RobotMap.cannonXAxisMotorController.set(ADJUST_SPEED);
             }
-        }
-        else if(dir == ZAxisRelativeDirection.DOWN) {
-            if (RobotMap.cannonZAxisEncoder.get() <= -maxUpDownDistance) {
-                RobotMap.cannonXAxisMotorController.set(adjustSpeed);
+        } else if(dir == ZAxisRelativeDirection.DOWN) {
+            if (RobotMap.cannonZAxisEncoder.get() <= -MAX_UP_DOWN_DISTANCE) {
+                RobotMap.cannonXAxisMotorController.set(ADJUST_SPEED);
             }
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("Direction is not up or down (null maybe?)");
         }
     }
@@ -95,8 +91,9 @@ public class Cannon extends PIDSubsystem {
 
 	@Override
 	protected void usePIDOutput(double output) {
-    	if(!PID)
-    	spinMotor.pidWrite(output);
+    	if (PID) {
+    		spinMotor.pidWrite(output);
+    	}
 	}
 	
 	/**

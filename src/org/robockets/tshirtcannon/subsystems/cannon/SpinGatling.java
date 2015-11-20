@@ -34,7 +34,9 @@ public class SpinGatling extends Command {
     
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if(!cannon.PID) end(); // If it's unaligned, I will not turn to next barrel!
+    	if (!cannon.PID) {
+    		end(); // If it's unaligned, I will not turn to next barrel!
+    	}
     }
 
     // Called repeatedly when this Command is scheduled to run
