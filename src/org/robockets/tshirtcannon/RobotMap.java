@@ -38,4 +38,9 @@ public class RobotMap {
 	public static final boolean safetyEnabled = true;
 	public static final int safetySensorPort = -1; //TODO: update when hardware exists IRL
 	public static final SafetySensor safetySensor = new SafetySensor(new AnalogInput(safetySensorPort));
+	
+	public static int frontLeftMotor = 1;
+	public static int backLeftMotor = 2;
+	public static int frontRightMotor = 3;
+	public static int backRightMotor = 4;
 }
