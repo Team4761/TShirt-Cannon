@@ -2,6 +2,7 @@ package org.robockets.tshirtcannon;
 
 import org.robockets.buttonmanager.ButtonManager;
 import org.robockets.buttonmanager.buttons.ActionButton;
+import org.robockets.tshirtcannon.subsystems.cannon.AdjustCannon;
 import org.robockets.tshirtcannon.subsystems.cannon.AlignGatling;
 import org.robockets.tshirtcannon.subsystems.cannon.FireCannon;
 import org.robockets.tshirtcannon.subsystems.cannon.PopCannon;
@@ -17,6 +18,8 @@ public class OI {
 		ButtonManager.addButton(new ActionButton(0, 1, new AlignGatling(), false));
 		ButtonManager.addButton(new ActionButton(0, 2, new SpinGatling(1), false)); // Spin the gatling gun by one barrel.
 		ButtonManager.addButton(new ActionButton(0, 3, new PopCannon(0.5), false));
+		ButtonManager.addButton(new ActionButton(0, 4, new AdjustCannon(ZAxisRelativeDirection.DOWN), false));
+		ButtonManager.addButton(new ActionButton(0, 5, new AdjustCannon(ZAxisRelativeDirection.UP), false));
 	}
 }
 
