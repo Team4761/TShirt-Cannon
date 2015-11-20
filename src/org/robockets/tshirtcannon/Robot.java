@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.robockets.tshirtcannon.subsystems.Drivetrain;
+import org.robockets.tshirtcannon.subsystems.DriveTrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,7 +17,7 @@ import org.robockets.tshirtcannon.subsystems.Drivetrain;
  */
 public class Robot extends IterativeRobot {
 
-	public static Drivetrain drivetrain = new Drivetrain();
+	public static DriveTrain drivetrain = new DriveTrain();
 	
 	public static OI oi;
 

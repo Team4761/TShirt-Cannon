@@ -1,7 +1,7 @@
 package org.robockets.tshirtcannon.subsystems;
 
 import org.robockets.tshirtcannon.RobotMap;
-import org.robockets.tshirtcannon.commands.drive;
+import org.robockets.tshirtcannon.commands.Drive;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Drivetrain extends Subsystem {
+public class DriveTrain extends Subsystem {
 	
 		public static final RobotDrive drivetrain = new RobotDrive(1,2,3,4);
     
@@ -22,7 +22,7 @@ public class Drivetrain extends Subsystem {
     	
 
     public void initDefaultCommand() {
-    	setDefaultCommand(new drive());
+    	setDefaultCommand(new Drive());
 
     }
     
