@@ -72,7 +72,8 @@ run/
 ehthumbs.db
 Thumbs.db
 
-release/
+
+
 build/
 .metadata/
 src/resources

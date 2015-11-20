@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package org.robockets.tshirtcannon;
+=======
+package org.robockets.tshirtcannon
+>>>>>>> b80c01d6fbad79df7931bf1a95c0a6e75b878ee1
 
 public class RobotMap {
     // For example to map the left and right motors, you could define the
