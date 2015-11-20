@@ -19,8 +19,14 @@ public class PopCannon extends Command {
     
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if(!cannon.PID) end(); // If it's unaligned, I will not pop!
-        if(RobotMap.safetySensor.getDistance() < 200 && RobotMap.safetyEnabled == true) end(); //Something within 2 meters, I will not pop!
+    	if (!cannon.PID) {
+    		end(); // If it's unaligned, I will not pop!
+    	}
+    	
+        if (RobotMap.safetySensor.getDistance() < 200 && RobotMap.safetyEnabled == true) {
+        	end(); //Something within 2 meters, I will not pop!
+        }
+        
     	setTimeout(timeout);
     }
 
@@ -42,6 +48,6 @@ public class PopCannon extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	cannon.setValve(false);
+    	end();
     }
 }
