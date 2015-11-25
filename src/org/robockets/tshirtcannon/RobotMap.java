@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.I2C.Port;
  * floating around.
  */
 public class RobotMap {
-	public static I2C arduino = new I2C(Port.kOnboard, 1 );
+	public static I2C arduino = new I2C(Port.kOnboard, 8 );
 
 	
 	public RobotMap() {
