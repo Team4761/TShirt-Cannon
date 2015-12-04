@@ -19,7 +19,7 @@ public class PopCannon extends Command {
     
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if (!Robot.cannonSubsystem.PID) {
+    	if (Robot.cannonSubsystem.PID == false) {
     		end(); // If it's unaligned, I will not pop!
     	}
     	
