@@ -1,7 +1,7 @@
 package org.robockets.tshirtcannon.subsystems.cannon;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.robockets.tshirtcannon.RobotMap;
+import org.robockets.tshirtcannon.Robot;
 import org.robockets.tshirtcannon.ZAxisRelativeDirection;
 
 /**
@@ -10,7 +10,7 @@ import org.robockets.tshirtcannon.ZAxisRelativeDirection;
 public class AdjustCannon extends Command {
     ZAxisRelativeDirection dir;
     public AdjustCannon(ZAxisRelativeDirection dir) {
-        requires(RobotMap.cannonSubsystem);
+        requires(Robot.cannonSubsystem);
         this.dir = dir;
     }
     protected void initialize() {
@@ -18,7 +18,7 @@ public class AdjustCannon extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        RobotMap.cannonSubsystem.adjustAngle(dir);
+        Robot.cannonSubsystem.adjustAngle(dir);
     }
 
     // Make this return true when this Command no longer needs to run execute()

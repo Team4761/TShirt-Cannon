@@ -16,11 +16,11 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Cannon extends PIDSubsystem {
 	
-	private Solenoid fire = RobotMap.fire; // Firing solenoid.
-	private SpeedController spinMotor = RobotMap.spinMotor;
+	//private Solenoid fire = RobotMap.fire; // Firing solenoid.
+	//private SpeedController spinMotor = RobotMap.spinMotor;
 	
-	private Encoder spinEncoder = RobotMap.spinEncoder;
-	private DigitalInput spinMagnet = RobotMap.spinMagnet;
+	//private Encoder spinEncoder = RobotMap.spinEncoder;
+	//private DigitalInput spinMagnet = RobotMap.spinMagnet;
 	
 	public float distance; // Must initialize.
 	
@@ -47,7 +47,7 @@ public class Cannon extends PIDSubsystem {
      * @param output Output of solenoid, open is true, closed is false.
      */
     public void setValve(boolean output) {
-    	fire.set(output); // Opens solenoid.
+    	//fire.set(output); // Opens solenoid.
     }
     
     /**
@@ -86,13 +86,13 @@ public class Cannon extends PIDSubsystem {
 
 	@Override
 	protected double returnPIDInput() {
-		return spinEncoder.getDistance();
+		return 0; //spinEncoder.getDistance();
 	}
 
 	@Override
 	protected void usePIDOutput(double output) {
     	if (PID) {
-    		spinMotor.pidWrite(output);
+    		//spinMotor.pidWrite(output);
     	}
 	}
 	
@@ -101,7 +101,7 @@ public class Cannon extends PIDSubsystem {
 	 * @param speed The speed to spin the gatling gun portion of the cannon by.
 	 */
 	public void spinGatling(double speed) {
-		spinMotor.set(speed);
+		//spinMotor.set(speed);
 	};
 	
 	/**
@@ -109,14 +109,14 @@ public class Cannon extends PIDSubsystem {
 	 * @return	True if the DigitalInput is activated, meaning the barrel is matched correctly to the valve.
 	 */
 	public boolean getAligned() {
-		return spinMagnet.get();
+		return false; //spinMagnet.get();
 	}
 	
 	/**
 	 * Enable and reset the PID so that distance is 0.
 	 */
 	public void resetPID() {
-		spinEncoder.reset();
+		//spinEncoder.reset();
 		setSetpoint(0);
 		PID = true;
 	}

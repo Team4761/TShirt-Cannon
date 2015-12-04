@@ -14,8 +14,7 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
-	public Joystick leftStick = new Joystick(1);
-	public Joystick rightStick = new Joystick(2);
+	public Joystick leftStick = new Joystick(0);
 	
 	public OI() {
 		ButtonManager.addButton(new ActionButton(0, 0, new FireCannon(), false));

@@ -1,5 +1,6 @@
 package org.robockets.tshirtcannon.subsystems.cannon;
 
+import org.robockets.tshirtcannon.Robot;
 import org.robockets.tshirtcannon.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -9,17 +10,16 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PopCannon extends Command {
 
-	Cannon cannon = RobotMap.cannonSubsystem;
 	double timeout;
 	
     public PopCannon(double time) {
-        requires(cannon);
+        requires(Robot.cannonSubsystem);
         timeout = time;
     }
     
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if (!cannon.PID) {
+    	if (!Robot.cannonSubsystem.PID) {
     		end(); // If it's unaligned, I will not pop!
     	}
     	
@@ -32,7 +32,7 @@ public class PopCannon extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	cannon.setValve(true);
+    	Robot.cannonSubsystem.setValve(true);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -42,7 +42,7 @@ public class PopCannon extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	cannon.setValve(false);
+    	Robot.cannonSubsystem.setValve(false);
     }
 
     // Called when another command which requires one or more of the same

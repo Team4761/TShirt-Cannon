@@ -13,13 +13,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DriveTrain extends Subsystem {
 	
-		public static final RobotDrive drivetrain = new RobotDrive(1,2,3,4);
-    
-    	Victor frontLeftMotor = new Victor(RobotMap.frontLeftMotor);
-    	Victor backLeftMotor = new Victor(RobotMap.backLeftMotor);
-    	Victor frontRightMotor = new Victor(RobotMap.frontRightMotor);
-    	Victor backRightMotor = new Victor(RobotMap.backRightMotor);
-    	
+	public static final RobotDrive drivetrain = new RobotDrive(1,2,3,4);
 
     public void initDefaultCommand() {
     	setDefaultCommand(new Drive());
@@ -27,7 +21,8 @@ public class DriveTrain extends Subsystem {
     }
     
     
-    public void takeJoystickInputs(Joystick left, Joystick right){
+    public void takeJoystickInputs(double left, double right){
+    	System.out.println(left + " .. " + right);
     	drivetrain.tankDrive(left, right);
     }
     

@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.robockets.tshirtcannon.subsystems.DriveTrain;
+import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -18,6 +19,7 @@ import org.robockets.tshirtcannon.subsystems.DriveTrain;
 public class Robot extends IterativeRobot {
 
 	public static DriveTrain drivetrain = new DriveTrain();
+	public static final Cannon cannonSubsystem = new Cannon();
 	
 	public static OI oi;
 
@@ -29,7 +31,6 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-
     }
 	
 	public void disabledPeriodic() {
