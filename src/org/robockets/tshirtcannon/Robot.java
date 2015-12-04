@@ -1,9 +1,13 @@
 
 package org.robockets.tshirtcannon;
 
+import org.robockets.tshirtcannon.commands.Cylon;
+import org.robockets.tshirtcannon.subsystems.LED;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
@@ -17,8 +21,13 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 
+	public static Subsystem exampleSubsystem;
+	
+	public static LED ledSubsystem = new LED();
+
     Command autonomousCommand;
 
+    Command cylonCommand = new Cylon();
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -48,7 +57,11 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        if (autonomousCommand != null) autonomousCommand.cancel();
+        if (autonomousCommand != null) {
+        	autonomousCommand.cancel(); 
+        }
+        cylonCommand.start();
+        cylonCommand.start();
     }
 
     /**
