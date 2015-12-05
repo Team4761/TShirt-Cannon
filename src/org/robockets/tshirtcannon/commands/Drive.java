@@ -1,5 +1,6 @@
 package org.robockets.tshirtcannon.commands;
 
+import org.robockets.buttonmanager.ButtonManager;
 import org.robockets.tshirtcannon.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -7,7 +8,6 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Drive extends Command {
 
     public Drive() {
-        
     	requires(Robot.drivetrain);
     }
 
@@ -15,8 +15,7 @@ public class Drive extends Command {
     }
 
     protected void execute() {
-
-    	Robot.drivetrain.takeJoystickInputs(Robot.oi.joyStick.getRawAxis(0), Robot.oi.joyStick.getRawAxis(1));
+    	Robot.drivetrain.takeJoystickInputs(ButtonManager.getJoystick(0).getRawAxis(1), ButtonManager.getJoystick(0).getRawAxis(5));
     }
 
     protected boolean isFinished() {

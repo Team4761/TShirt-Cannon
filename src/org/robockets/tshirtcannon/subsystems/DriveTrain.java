@@ -10,22 +10,17 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class DriveTrain extends Subsystem {
-	
-	public static final RobotDrive drivetrain = new RobotDrive(RobotMap.frontLeftMotor,RobotMap.backLeftMotor,RobotMap.frontRightMotor,RobotMap.backRightMotor);
 
     public void initDefaultCommand() {
-    	setDefaultCommand(new Drive());
-
     }
     
     
-    public void takeJoystickInputs(double left, double right){
-    	System.out.println(left + " .. " + right);
-    	drivetrain.tankDrive(left, right);
+    public void takeJoystickInputs(double left, double right) {
+    	RobotMap.robotDrive.tankDrive(left, right);
     }
     
-    public void stop(){
-    	drivetrain.drive(0,0);
+    public void stop() {
+    	RobotMap.robotDrive.drive(0, 0);
     }
 }
 

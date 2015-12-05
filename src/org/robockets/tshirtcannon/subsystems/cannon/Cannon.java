@@ -3,11 +3,13 @@ package org.robockets.tshirtcannon.subsystems.cannon;
 import org.robockets.tshirtcannon.RobotMap;
 import org.robockets.tshirtcannon.XAxisRelativeDirection; // ¯\_(ツ)_/¯
 import org.robockets.tshirtcannon.ZAxisRelativeDirection; // ¯\_(ツ)_/¯
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -16,15 +18,15 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Cannon extends PIDSubsystem {
 	
-	//private Solenoid fire = RobotMap.fire; // Firing solenoid.
-	//private SpeedController spinMotor = RobotMap.spinMotor;
+	private Solenoid fire = RobotMap.fire; // Firing solenoid.
+	private VictorSP spinMotor = RobotMap.spinMotor;
 	
 	//private Encoder spinEncoder = RobotMap.spinEncoder;
 	//private DigitalInput spinMagnet = RobotMap.spinMagnet;
 	
 	public float distance; // Must initialize.
 	
-    final static double ADJUST_SPEED = 0.5; //TODO: update when hardware exists IRL
+    final static double ADJUST_SPEED = 0.3; //TODO: update when hardware exists IRL
     final static int MAX_UP_DOWN_DISTANCE = 100; // TODO: Update when hardware exists IRL
 	
 	/**
@@ -47,7 +49,7 @@ public class Cannon extends PIDSubsystem {
      * @param output Output of solenoid, open is true, closed is false.
      */
     public void setValve(boolean output) {
-    	//fire.set(output); // Opens solenoid.
+    	fire.set(output); // Opens solenoid.
     }
     
     /**
@@ -70,18 +72,22 @@ public class Cannon extends PIDSubsystem {
      * Adjust the angle of the cannon.
      * @param dir Direction to move the cannon. Must be up or down.
      */
-    public static void adjustAngle(ZAxisRelativeDirection dir) {
+    public void adjustAngle(ZAxisRelativeDirection dir) {
         if (dir == ZAxisRelativeDirection.UP) {
-            if (RobotMap.cannonZAxisEncoder.get() <= MAX_UP_DOWN_DISTANCE) {
+            //if (RobotMap.cannonZAxisEncoder.get() <= MAX_UP_DOWN_DISTANCE) {
                 RobotMap.cannonXAxisMotorController.set(ADJUST_SPEED);
-            }
+            //}
         } else if(dir == ZAxisRelativeDirection.DOWN) {
-            if (RobotMap.cannonZAxisEncoder.get() <= -MAX_UP_DOWN_DISTANCE) {
-                RobotMap.cannonXAxisMotorController.set(ADJUST_SPEED);
-            }
+            //if (RobotMap.cannonZAxisEncoder.get() <= -MAX_UP_DOWN_DISTANCE) {
+                RobotMap.cannonXAxisMotorController.set(-ADJUST_SPEED);
+            //}
         } else {
             throw new IllegalArgumentException("Direction is not up or down (null maybe?)");
         }
+    }
+    
+    public void stopAngleMotor() {
+    	RobotMap.cannonXAxisMotorController.set(0);
     }
 
 	@Override
@@ -101,7 +107,7 @@ public class Cannon extends PIDSubsystem {
 	 * @param speed The speed to spin the gatling gun portion of the cannon by.
 	 */
 	public void spinGatling(double speed) {
-		//spinMotor.set(speed);
+		spinMotor.set(speed);
 	};
 	
 	/**
