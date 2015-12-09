@@ -27,7 +27,7 @@ public class RobotMap {
 	public static int numberOfBarrels;
 	public static Solenoid fire = new Solenoid(0);
 	public static VictorSP spinMotor = new VictorSP(6);;
-	public static Encoder spinEncoder;
+	public static Encoder spinEncoder = new Encoder(0, 1);;
 	public static DigitalInput spinMagnet;
 	public static final boolean safetyEnabled = true;
 	public static final int safetySensorPort = -1; //TODO: update when hardware exists IRL
@@ -35,7 +35,6 @@ public class RobotMap {
 
 	public RobotMap() {
 		numberOfBarrels = 7;
-		//spinEncoder = new Encoder(0, 1); // Assume digital ports of 0 and 1 for encoder.
-		//spinEncoder.setDistancePerPulse(numberOfBarrels/3000); // Assume 3000 resolution. Distance is measured in barrels.
+		spinEncoder.setDistancePerPulse(numberOfBarrels/3000); // Assume 3000 resolution. Distance is measured in barrels.
 	}
 }
