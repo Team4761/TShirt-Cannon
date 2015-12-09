@@ -14,6 +14,7 @@ public class AdjustCannon extends Command {
         requires(Robot.cannonSubsystem);
         this.dir = dir;
     }
+    
     protected void initialize() {
     }
 

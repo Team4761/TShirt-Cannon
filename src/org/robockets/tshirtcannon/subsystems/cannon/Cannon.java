@@ -61,7 +61,7 @@ public class Cannon extends PIDSubsystem {
     public void rotateBase(XAxisRelativeDirection dir) {
     	if (dir == XAxisRelativeDirection.LEFT) {
     		//TODO: spin left
-    	} else if(dir == XAxisRelativeDirection.RIGHT) {
+    	} else if (dir == XAxisRelativeDirection.RIGHT) {
     		//TODO: spin right
     	} else {
     		throw new IllegalArgumentException("Direction is not left or right");
@@ -77,7 +77,7 @@ public class Cannon extends PIDSubsystem {
             //if (RobotMap.cannonZAxisEncoder.get() <= MAX_UP_DOWN_DISTANCE) {
                 RobotMap.cannonXAxisMotorController.set(ADJUST_SPEED);
             //}
-        } else if(dir == ZAxisRelativeDirection.DOWN) {
+        } else if (dir == ZAxisRelativeDirection.DOWN) {
             //if (RobotMap.cannonZAxisEncoder.get() <= -MAX_UP_DOWN_DISTANCE) {
                 RobotMap.cannonXAxisMotorController.set(-ADJUST_SPEED);
             //}

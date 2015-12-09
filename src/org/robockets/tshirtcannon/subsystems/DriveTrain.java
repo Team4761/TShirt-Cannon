@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * The drive train for the robot.
  */
 public class DriveTrain extends Subsystem {
 
