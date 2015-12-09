@@ -39,3 +39,46 @@ build/
 j2meclasses/
 suite/
 doc/
+
+# WPILib
+
+build/
+dist/
+sysProps.xml
+workbench.xmi
+
+# IDE
+*.ipr
+
+*.iws
+out/
+tmp/
+.settings/
+
+/.idea
+
+# Toast/GradleRIO
+run/
+.gradle/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.AppleDouble
+.LSOverride
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+gradlew
+gradlew.bat
+*.gradle
+release/
+gradle/
+build/
+.metadata/
+.gradle/
+src/resources
+src/groovy
