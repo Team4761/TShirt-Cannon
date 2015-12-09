@@ -32,7 +32,7 @@ public class Cannon extends PIDSubsystem {
 	/**
 	 * A switch for using PID to do encoder-based spin for the gatling part of the Cannon.
 	 */
-	public boolean PID = false; // Set true when PID is in use, otherwise if you fire, align it first.
+	public boolean PID = true; // Set true when PID is in use, otherwise if you fire, align it first.
 	
 	public Cannon(){
 		super("Cannon", 0.1, 0, 0);
@@ -98,7 +98,7 @@ public class Cannon extends PIDSubsystem {
 	@Override
 	protected void usePIDOutput(double output) {
     	if (PID) {
-    		//spinMotor.pidWrite(output);
+    		spinMotor.pidWrite(output);
     	}
 	}
 	
@@ -115,7 +115,7 @@ public class Cannon extends PIDSubsystem {
 	 * @return	True if the DigitalInput is activated, meaning the barrel is matched correctly to the valve.
 	 */
 	public boolean getAligned() {
-		return false; //spinMagnet.get();
+		return true;
 	}
 	
 	/**
