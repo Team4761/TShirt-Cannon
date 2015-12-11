@@ -30,6 +30,6 @@ public class RobotMap {
 
 	public RobotMap() {
 		numberOfBarrels = 7;
-		spinEncoder.setDistancePerPulse(numberOfBarrels/7); // Assume 7 resolution. Distance is measured in barrels.
+		spinEncoder.setDistancePerPulse(numberOfBarrels/7 * 40/16); // Assume 7 resolution. 40/16 gear ratio.
 	}
 }
