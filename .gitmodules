@@ -1,3 +1,6 @@
 [submodule "ButtonManager"]
 	path = lib/ButtonManager
 	url = https://github.com/Team4761/ButtonManager.git
+[submodule "lib/DistanceSensorLib"]
+	path = lib/DistanceSensorLib
+	url = https://github.com/Team4761/DistanceSensorLib

@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 
-import org.robockets.tshirtcannon.sensors.SafetySensor;
+import org.robockets.distancesensorlib.maxbotix.LvMaxSonarEz;
 import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
 /**
@@ -30,8 +30,8 @@ public class RobotMap {
 	public static Encoder spinEncoder = new Encoder(0, 1);;
 	public static DigitalInput spinMagnet;
 	public static final boolean safetyEnabled = true;
-	public static final int safetySensorPort = -1; //TODO: update when hardware exists IRL
-	//public static final SafetySensor safetySensor = new SafetySensor(new AnalogInput(safetySensorPort));
+	public static final int safetySensorPort = 7;
+	public static final LvMaxSonarEz safetySensor = new LvMaxSonarEz(new AnalogInput(safetySensorPort), 5.0); //TODO: Check voltage
 
 	public RobotMap() {
 		numberOfBarrels = 7;

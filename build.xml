@@ -71,6 +71,7 @@
         <javac destdir="${build.dir}" includeAntRuntime="no" includeJavaRuntime="no" classpath="${classpath}" target="${ant.java.version}" source="${ant.java.version}" compiler="javac${ant.java.version}" debug="true">
 			<src path="${src.dir}" />
 			<src path="lib/ButtonManager/src" />
+        	<src path="lib/DistanceSensorLib/src" />
 			<include name="**/*.java" />
 		</javac>
     </target>
