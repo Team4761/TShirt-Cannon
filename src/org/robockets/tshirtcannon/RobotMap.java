@@ -1,15 +1,10 @@
 package org.robockets.tshirtcannon;
 
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
-
-import org.robockets.tshirtcannon.sensors.SafetySensor;
-import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
