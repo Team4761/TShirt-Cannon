@@ -18,7 +18,7 @@ public class RobotMap {
 
 	private static final int cannonXAxisMotorControllerPort = 5;
 	public static final VictorSP cannonXAxisMotorController = new VictorSP(cannonXAxisMotorControllerPort);
-	public static final Encoder cannonZAxisEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+	//public static final Encoder cannonZAxisEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 	public static int numberOfBarrels;
 	public static Solenoid fire = new Solenoid(0);
 	public static VictorSP spinMotor = new VictorSP(6);
@@ -29,7 +29,6 @@ public class RobotMap {
 	//public static final SafetySensor safetySensor = new SafetySensor(new AnalogInput(safetySensorPort));
 
 	public RobotMap() {
-		numberOfBarrels = 7;
-		spinEncoder.setDistancePerPulse(numberOfBarrels/7 * 40/16); // Assume 7 resolution. 40/16 gear ratio.
+		spinEncoder.setDistancePerPulse(numberOfBarrels/(7 * 61 * 40/16)); // Assume 7 resolution. 1:69 gearbox ratio. And 40/16 gear ratio.
 	}
 }

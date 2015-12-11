@@ -21,8 +21,8 @@ public class Cannon extends PIDSubsystem {
 	private Solenoid fire = RobotMap.fire; // Firing solenoid.
 	private VictorSP spinMotor = RobotMap.spinMotor;
 	
-	//private Encoder spinEncoder = RobotMap.spinEncoder;
-	//private DigitalInput spinMagnet = RobotMap.spinMagnet;
+	private Encoder spinEncoder = RobotMap.spinEncoder;
+	private DigitalInput spinMagnet = RobotMap.spinMagnet;
 	
 	public float distance; // Must initialize.
 	
@@ -100,7 +100,7 @@ public class Cannon extends PIDSubsystem {
 	@Override
 	protected void usePIDOutput(double output) {
     	if (PID) {
-    		spinMotor.pidWrite(output);
+    		RobotMap.spinMotor.pidWrite(output);
     	}
 	}
 	
@@ -109,7 +109,7 @@ public class Cannon extends PIDSubsystem {
 	 * @param speed The speed to spin the gatling gun portion of the cannon by.
 	 */
 	public void spinGatling(double speed) {
-		spinMotor.set(speed);
+		RobotMap.spinMotor.set(speed);
 	};
 	
 	/**
@@ -124,7 +124,7 @@ public class Cannon extends PIDSubsystem {
 	 * Enable and reset the PID so that distance is 0.
 	 */
 	public void resetPID() {
-		//spinEncoder.reset();
+		RobotMap.spinEncoder.reset();
 		setSetpoint(0);
 		PID = true;
 	}
