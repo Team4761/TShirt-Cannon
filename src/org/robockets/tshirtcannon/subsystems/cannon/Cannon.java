@@ -100,7 +100,7 @@ public class Cannon extends PIDSubsystem {
 	@Override
 	protected void usePIDOutput(double output) {
     	if (PID) {
-    		RobotMap.spinMotor.pidWrite(output);
+    		// RobotMap.spinMotor.pidWrite(output);
     	}
 	}
 	
