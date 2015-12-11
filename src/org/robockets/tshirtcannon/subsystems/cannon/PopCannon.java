@@ -23,9 +23,9 @@ public class PopCannon extends Command {
     	//	end(); // If it's unaligned, I will not pop!
     	//}
     	
-        //if (RobotMap.safetySensor.getDistance() < 200 && RobotMap.safetyEnabled == true) {
-        //	end(); //Something within 2 meters, I will not pop!
-        //}
+        if (RobotMap.safetySensor.getDistanceCentimeters() < 200 && RobotMap.safetyEnabled) {
+        	end(); //Something within 2 meters, I will not pop!
+        }
         
     	setTimeout(timeout);
     	Robot.cannonSubsystem.setValve(true);
