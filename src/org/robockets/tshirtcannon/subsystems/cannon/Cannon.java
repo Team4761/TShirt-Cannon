@@ -92,7 +92,9 @@ public class Cannon extends PIDSubsystem {
 
 	@Override
 	protected double returnPIDInput() {
-		return 0; //spinEncoder.getDistance();
+		double distance = RobotMap.spinEncoder.getDistance();
+		System.out.println(distance);
+		return distance;
 	}
 
 	@Override
