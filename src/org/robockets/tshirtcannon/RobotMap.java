@@ -26,8 +26,8 @@ public class RobotMap {
 	public static final Encoder cannonZAxisEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 	public static int numberOfBarrels;
 	public static Solenoid fire = new Solenoid(0);
-	public static VictorSP spinMotor = new VictorSP(6);;
-	public static Encoder spinEncoder = new Encoder(0, 1);;
+	public static VictorSP spinMotor = new VictorSP(6);
+	public static Encoder spinEncoder = new Encoder(0, 1);
 	public static DigitalInput spinMagnet;
 	public static final boolean safetyEnabled = true;
 	public static final int safetySensorPort = -1; //TODO: update when hardware exists IRL
