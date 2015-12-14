@@ -9,6 +9,7 @@ import org.robockets.tshirtcannon.subsystems.cannon.PopCannon;
 import org.robockets.tshirtcannon.subsystems.cannon.SpinGatling;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -26,6 +27,13 @@ public class OI {
 		ButtonManager.addButton(new ActionButton(0, 4, new AdjustCannon(ZAxisRelativeDirection.DOWN), true));
 		ButtonManager.addButton(new ActionButton(0, 2, new SpinGatling(0.5), true));
 		ButtonManager.addButton(new ActionButton(0, 3, new SpinGatling(-0.5), true));
+		
+		// SmartDashboard stuff.
+		SmartDashboard.putData("Pop Cannon", new PopCannon(0.05));
+		SmartDashboard.putData("Adjust Cannon Upwards", new AdjustCannon(ZAxisRelativeDirection.UP));
+		SmartDashboard.putData("Adjust Cannon Downwards", new AdjustCannon(ZAxisRelativeDirection.DOWN));
+		SmartDashboard.putData("Spin Gatling Forward", new SpinGatling(1));
+		SmartDashboard.putData("Spin Gatling Backwards", new SpinGatling(-1));
 	}
 }
 
