@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.robockets.buttonmanager.ButtonThread;
 import org.robockets.tshirtcannon.commands.Drive;
+import org.robockets.tshirtcannon.commands.UpdateDashboard;
 import org.robockets.tshirtcannon.subsystems.DriveTrain;
 import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
@@ -38,6 +39,7 @@ public class Robot extends IterativeRobot {
     	robotMap = new RobotMap();
 		oi = new OI();
     	buttonThread.start();
+    	(new UpdateDashboard()).start();
     }
 	
 	public void disabledPeriodic() {
