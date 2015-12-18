@@ -39,7 +39,6 @@ public class Robot extends IterativeRobot {
     	robotMap = new RobotMap();
 		oi = new OI();
     	buttonThread.start();
-    	(new UpdateDashboard()).start();
     }
 	
 	public void disabledPeriodic() {
@@ -49,6 +48,7 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+    	(new UpdateDashboard()).start();
     }
 
     /**
@@ -65,6 +65,7 @@ public class Robot extends IterativeRobot {
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
         drive.start();
+    	(new UpdateDashboard()).start();
     }
 
     /**
