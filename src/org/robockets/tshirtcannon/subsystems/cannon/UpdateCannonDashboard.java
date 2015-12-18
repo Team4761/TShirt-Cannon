@@ -28,7 +28,7 @@ public class UpdateCannonDashboard extends Command {
     	SmartDashboard.putNumber("Cannon PID Spin Position", cannon.getPosition());
     	SmartDashboard.putBoolean("Cannon PID", cannon.PID);
     	// Safety
-    	SmartDashboard.putNumber("Cannon Safety Distance Sensor Value", RobotMap.safetySensor.getDistance());
+    	SmartDashboard.putNumber("Cannon Safety Distance Sensor Value (cm)", RobotMap.safetySensor.getDistanceCentimeters());
     	SmartDashboard.putBoolean("Cannon Aligned", cannon.getAligned());
     }
 
