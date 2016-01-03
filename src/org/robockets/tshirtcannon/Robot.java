@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.robockets.buttonmanager.ButtonThread;
 import org.robockets.tshirtcannon.commands.Drive;
+import org.robockets.tshirtcannon.commands.UpdateDashboard;
 import org.robockets.tshirtcannon.subsystems.DriveTrain;
 import org.robockets.tshirtcannon.subsystems.cannon.Cannon;
 
@@ -47,6 +48,7 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+    	(new UpdateDashboard()).start();
     }
 
     /**
@@ -63,6 +65,7 @@ public class Robot extends IterativeRobot {
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
         drive.start();
+    	(new UpdateDashboard()).start();
     }
 
     /**
